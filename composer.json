@@ -1,0 +1,20 @@
+{
+    "name": "micro/plugin-serializer",
+    "description": "Micro Framework: Serializer plugin",
+    "type": "library",
+    "version": "0.1",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Micro\\Plugin\\Serializer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Stanislau.Komar",
+            "email": "stanislau_komar@epam.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
