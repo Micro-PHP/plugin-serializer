@@ -16,13 +16,15 @@ class SerializerPlugin extends AbstractPlugin
      */
     public function provideDependencies(Container $container): void
     {
-        $container->register(SerializerFacadeInterface::class, function (Container $container) {
-            return $this->createSerializerFacade($container);
-        });
+        $container->register(
+            SerializerFacadeInterface::class, function (Container $container) {
+                return $this->createSerializerFacade($container);
+            }
+        );
     }
 
     /**
-     * @param Container $container
+     * @param  Container $container
      * @return SerializerFacadeInterface
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
@@ -35,7 +37,7 @@ class SerializerPlugin extends AbstractPlugin
     }
 
     /**
-     * @param Container $container
+     * @param  Container $container
      * @return SerializerFactoryProviderInterface
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface

@@ -12,7 +12,7 @@ class SerializerFactoryProvider implements SerializerFactoryProviderInterface
     private ?SerializerFactoryInterface $serializerFactory = null;
 
     /**
-     * @param SerializerFactoryInterface $serializerFactory
+     * @param  SerializerFactoryInterface $serializerFactory
      * @return void
      */
     public function setFactory(SerializerFactoryInterface $serializerFactory): void

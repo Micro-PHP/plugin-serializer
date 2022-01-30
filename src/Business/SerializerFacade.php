@@ -10,14 +10,14 @@ class SerializerFacade implements SerializerFacadeInterface
      * @param SerializerFactoryProviderInterface $factoryProvider
      */
     public function __construct(
-        private SerializerFactoryProviderInterface $factoryProvider
+    private SerializerFactoryProviderInterface $factoryProvider
     ) {
     }
 
     /**
      * {@inheritDoc}
      */
-    public function serialize(object $object, string $format, array $context = []): string
+    public function serialize(mixed $object, string $format, array $context = []): string
     {
         return $this->factoryProvider
             ->getFactory()
