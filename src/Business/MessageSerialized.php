@@ -2,8 +2,6 @@
 
 namespace Micro\Plugin\Serializer\Business;
 
-use Micro\Plugin\Amqp\Business\Message\MessageInterface;
-
 class MessageSerialized
 {
     /**
