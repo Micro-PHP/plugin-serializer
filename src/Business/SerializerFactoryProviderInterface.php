@@ -2,7 +2,6 @@
 
 namespace Micro\Plugin\Serializer\Business;
 
-
 use Micro\Plugin\Serializer\Exception\SerializerAdapterNotInstalledException;
 
 interface SerializerFactoryProviderInterface

@@ -45,7 +45,7 @@ class SerializerPlugin extends AbstractPlugin
     protected function createSerializerFactoryProvider(Container $container): SerializerFactoryProviderInterface
     {
         $serializerFactory = $container->get(SerializerFactoryInterface::class);
-        $factoryProvider = new SerializerFactoryProvider();
+        $factoryProvider   = new SerializerFactoryProvider();
         $factoryProvider->setFactory($serializerFactory);
 
         return $factoryProvider;

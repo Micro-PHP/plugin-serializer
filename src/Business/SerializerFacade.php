@@ -11,7 +11,8 @@ class SerializerFacade implements SerializerFacadeInterface
      */
     public function __construct(
     private SerializerFactoryProviderInterface $factoryProvider
-    ) {
+    )
+    {
     }
 
     /**
