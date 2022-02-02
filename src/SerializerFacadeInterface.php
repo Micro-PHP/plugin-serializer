@@ -5,7 +5,7 @@ namespace Micro\Plugin\Serializer;
 interface SerializerFacadeInterface
 {
     public const FORMAT_JSON = 'json';
-    public const FORMAT_XML = 'xml';
+    public const FORMAT_XML  = 'xml';
 
     /**
      * @param  mixed $object
