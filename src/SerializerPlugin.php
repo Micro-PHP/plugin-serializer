@@ -3,51 +3,36 @@
 namespace Micro\Plugin\Serializer;
 
 use Micro\Component\DependencyInjection\Container;
-use Micro\Framework\Kernel\Plugin\AbstractPlugin;
-use Micro\Plugin\Serializer\Business\SerializerFacade;
-use Micro\Plugin\Serializer\Business\SerializerFactoryInterface;
-use Micro\Plugin\Serializer\Business\SerializerFactoryProvider;
-use Micro\Plugin\Serializer\Business\SerializerFactoryProviderInterface;
+use Micro\Framework\Kernel\KernelInterface;
+use Micro\Framework\Kernel\Plugin\DependencyProviderInterface;
+use Micro\Plugin\Serializer\Business\Pool\SerializerPool;
+use Micro\Plugin\Serializer\Business\Serializer\SerializerInterface;
+use Micro\Plugin\Serializer\Facade\SerializerFacade;
+use Micro\Plugin\Serializer\Facade\SerializerFacadeInterface;
 
-class SerializerPlugin extends AbstractPlugin
+class SerializerPlugin implements DependencyProviderInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function provideDependencies(Container $container): void
     {
-        $container->register(
-            SerializerFacadeInterface::class, function (Container $container) {
-                return $this->createSerializerFacade($container);
-            }
-        );
+        $container->register(SerializerFacadeInterface::class, function (
+            KernelInterface $kernel
+        ) {
+            return $this->createSerializerFacade($kernel);
+        });
     }
 
-    /**
-     * @param  Container $container
-     * @return SerializerFacadeInterface
-     * @throws \Psr\Container\ContainerExceptionInterface
-     * @throws \Psr\Container\NotFoundExceptionInterface
-     */
-    protected function createSerializerFacade(Container $container): SerializerFacadeInterface
+    protected function createSerializerFacade(KernelInterface $kernel): SerializerFacadeInterface
     {
         return new SerializerFacade(
-            $this->createSerializerFactoryProvider($container)
+            $this->createSerializerPool($kernel)
         );
     }
 
-    /**
-     * @param  Container $container
-     * @return SerializerFactoryProviderInterface
-     * @throws \Psr\Container\ContainerExceptionInterface
-     * @throws \Psr\Container\NotFoundExceptionInterface
-     */
-    protected function createSerializerFactoryProvider(Container $container): SerializerFactoryProviderInterface
+    protected function createSerializerPool(KernelInterface $kernel): SerializerInterface
     {
-        $serializerFactory = $container->get(SerializerFactoryInterface::class);
-        $factoryProvider   = new SerializerFactoryProvider();
-        $factoryProvider->setFactory($serializerFactory);
-
-        return $factoryProvider;
+        return new SerializerPool($kernel);
     }
 }
