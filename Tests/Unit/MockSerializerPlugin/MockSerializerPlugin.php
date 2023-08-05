@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Micro\Plugin\Serializer\Test\Unit\MockSerializerPlugin;
+namespace Micro\Plugin\Serializer\Tests\Unit\MockSerializerPlugin;
 
 use Micro\Plugin\Serializer\Business\Context\SerializerContextInterface;
 use Micro\Plugin\Serializer\Plugin\SerializerAdapterPluginInterface;
 use Micro\Plugin\Serializer\Plugin\SerializerInterface;
-use Micro\Plugin\Serializer\Test\Unit\MockSerializerPlugin\Context\MockSerializerContext;
+use Micro\Plugin\Serializer\Tests\Unit\MockSerializerPlugin\Context\MockSerializerContext;
 
 class MockSerializerPlugin implements SerializerAdapterPluginInterface
 {

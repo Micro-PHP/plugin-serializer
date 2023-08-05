@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Micro\Plugin\Serializer\Test\Unit\Business\Pool;
+namespace Micro\Plugin\Serializer\Tests\Unit\Business\Pool;
 
 use Micro\Framework\Kernel\Kernel;
 use Micro\Plugin\Serializer\Business\Context\SerializerContextInterface;

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Micro\Plugin\Serializer\Test\Unit;
+namespace Micro\Plugin\Serializer\Tests\Unit;
 
-use Micro\Kernel\App\AppKernel;
+use Micro\Framework\KernelApp\AppKernel;
 use Micro\Plugin\Serializer\Facade\SerializerFacadeInterface;
 use Micro\Plugin\Serializer\SerializerPlugin;
-use Micro\Plugin\Serializer\Test\Unit\MockSerializerPlugin\Context\MockSerializerContext;
-use Micro\Plugin\Serializer\Test\Unit\MockSerializerPlugin\MockSerializerPlugin;
+use Micro\Plugin\Serializer\Tests\Unit\MockSerializerPlugin\Context\MockSerializerContext;
+use Micro\Plugin\Serializer\Tests\Unit\MockSerializerPlugin\MockSerializerPlugin;
 use PHPUnit\Framework\TestCase;
 
 class SerializerPluginTest extends TestCase
