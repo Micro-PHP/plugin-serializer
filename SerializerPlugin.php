@@ -12,9 +12,6 @@ use Micro\Plugin\Serializer\Facade\SerializerFacadeInterface;
 
 class SerializerPlugin implements DependencyProviderInterface
 {
-    /**
-     * {@inheritdoc}
-     */
     public function provideDependencies(Container $container): void
     {
         $container->register(SerializerFacadeInterface::class, function (
